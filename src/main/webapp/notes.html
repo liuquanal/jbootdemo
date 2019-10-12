@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>notes index</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-size:14px;
+        }
+        .paginate{
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+<table width="100%" border="1">
+    <tr>
+        <th>id</th>
+        <th width="30%">msg</th>
+        <th>from</th>
+        <th>time</th>
+        <th>ip</th>
+        <th>source</th>
+        <th>操作</th>
+    </tr>
+    #for(notes : pageData.list )
+    <tr>
+        <td>#(notes.id)</td>
+        <td>#(notes.msg)</td>
+        <td>#(notes.from)</td>
+        <td>#(notes.time)</td>
+        <td>#(notes.ip)</td>
+        <td>#(notes.source)</td>
+        <td></td>
+    </tr>
+    #end
+</table>
+
+<div class="paginate">
+    #myPaginate()
+    #for(page : pages)
+    <a href="#(page.url??)">#(page.text??)</a>
+    #end
+    #end
+</div>
+
+</body>
+</html>
